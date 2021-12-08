@@ -1,0 +1,5 @@
+.header.true{
+    transition: transform 0.2s ease-in;
+    transform: translate(0%);
+}
+

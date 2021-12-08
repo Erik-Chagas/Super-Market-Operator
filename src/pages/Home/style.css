@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Galano Grotesque";
+    src: url(../../assets/fontes/GalanoGrotesqueAltRegular.otf);
+}
+
+html, body{
+    background-color: #efefef;
+    margin: 0;
+}
