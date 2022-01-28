@@ -29,8 +29,8 @@ function App(props){
             }).then(res => {
                 setMessage({messageText: 'Usuário cadastrado com sucesso. Confirme seu e-mail!', messageColor: 'green'})
                 setLoading(false)
-            })
-              .catch(erro => setMessage({messageText: erro.response.data.message, messageColor: 'red'}))
+            }).catch(erro => setMessage({messageText: erro.response.data.message, messageColor: 'red'}))
+
         } else {
             setMessage({messageText: 'As senhas não conferem', messageColor: 'red'})
             setTimeout(() => {

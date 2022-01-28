@@ -7,10 +7,9 @@ export const api = axios.create({
 api.interceptors.response.use(response => {
     return response;
 }, async err => {
-    const originalReq = err.config
-
-    if ( err.response.status === 401 && err.config && !err.config.__isRetryRequest )
+    if ( err.response.status === 401 && err.config && !err.config.__isRetryRequest)
         {
+            const originalReq = err.config
             originalReq._retry = true;
 
             const interception = await fetch(`${process.env.REACT_APP_API_BASE_URL}/refreshToken`, {
@@ -27,4 +26,6 @@ api.interceptors.response.use(response => {
 
             return axios(originalReq);
         }
+
+    return Promise.reject(err)
 });
